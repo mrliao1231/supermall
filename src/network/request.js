@@ -2,7 +2,7 @@ import axios from 'axios'
 export function request(config) {
   //1. 创建 axios 的实例
   const instance = axios.create({
-    baseURL: 'http://123.207.32.32:8000',
+    baseURL: 'http://152.136.185.210:7878/api/m5',
     timeout: 5000
   })
 
@@ -19,7 +19,7 @@ export function request(config) {
      //console.log(config)
      return config
   },err => {
-    //console.log(err)
+    console.log(err)
   })
 
   // 2.2 响应拦截  拦截服务器响应回来的信息
@@ -29,9 +29,30 @@ export function request(config) {
   },err => {
     console.log(err)
   })
-  
+
 
   //3. 发送真正的网络请求
   return instance(config)
 }
 
+
+// export function request(config) {
+//   return new Promise((resolve,reject) => {
+//     // 创建 axios 的实例
+//     const instance = axios.create({
+//       baseURL: 'http://123.207.32.32:80000',
+//       timeout: 5000
+//     })
+
+//     // 发送真正的网络请求
+//     instance(config) // 这个本身返回的就是一个 promise
+//     .then(res => {
+//       resolve(res)
+//     })
+//     .catch(err => {
+//       reject(err)
+//     })
+
+
+//   })
+// }

@@ -1,3 +1,4 @@
+
 module.exports = {
   configureWebpack: {
     resolve: {
@@ -11,4 +12,3 @@ module.exports = {
     }
   }
 }
-
